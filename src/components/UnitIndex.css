@@ -1,0 +1,147 @@
+.unit-index-container {
+    padding: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.unit-index-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.unit-index-header h1 {
+    font-size: 2rem;
+    color: var(--theme-book, var(--text-main));
+    margin-bottom: 0.5rem;
+}
+
+.unit-badge {
+    background-color: var(--theme-book);
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.unit-text {
+    color: white;
+    font-size: 2.2rem;
+    margin-right: 0.5rem;
+}
+
+.unit-number {
+    color: var(--theme-unit);
+    font-size: 2.2rem;
+}
+
+.lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.lesson-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.lesson-title {
+    font-size: 1.25rem;
+    color: var(--theme-book, var(--text-main));
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+.activity-groups-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.activity-group-box {
+    border: 2px solid #e2e8f0;
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    background: var(--background);
+    flex: 1;
+    min-width: 140px;
+}
+
+.is-opener-group {
+    border: none;
+    padding: 0;
+    background: transparent;
+}
+
+.activity-group-title {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    color: var(--theme-unit, var(--theme-book));
+}
+
+.activity-icons-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: flex-start;
+}
+
+.activity-icon-wrapper {
+    position: relative;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+.activity-icon-wrapper:hover {
+    /* El filtro hue-rotate gira el naranja original hacia los tonos verdes/azules. 
+       Ajustamos la saturación para intentar que cuadre cerca de tu #89A59B
+       sin perder los detalles en blanco y sombras del SVG original. */
+    filter: hue-rotate(120deg) saturate(0.3) brightness(0.95);
+}
+
+.activity-icon-btn {
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+
+/* Repeated Icon Badge */
+.icon-badge {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    /* Moved from right to left */
+    background-color: var(--theme-unit, #f59e0b);
+    color: white;
+    font-size: 0.95rem;
+    /* Increased size */
+    font-weight: 560;
+    /* Using Deuterium Bold weight */
+    width: 28px;
+    /* Increased dimensions */
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--surface);
+    /* Thicker border to match book */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+/* Specific styling for the Opener layout to make it span fully */
+.lesson-card.is-opener {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, var(--surface), #f8fafc);
+}

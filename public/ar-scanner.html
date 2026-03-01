@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <title>Mantis AR Scanner</title>
+  <!-- A-Frame and MindAR for Image Tracking -->
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+  <script>
+    AFRAME.registerComponent('pill-label', {
+      schema: {
+        text: { type: 'string', default: '' },
+        color: { type: 'string', default: '#882B41' }
+      },
+      init: function () {
+        const canvas = document.createElement('canvas');
+        canvas.width = 1024;
+        canvas.height = 256;
+        const ctx = canvas.getContext('2d');
+
+        const w = canvas.width;
+        const h = canvas.height;
+        const r = h / 2;
+
+        ctx.fillStyle = this.data.color;
+        ctx.beginPath();
+        ctx.moveTo(r, 0);
+        ctx.lineTo(w - r, 0);
+        ctx.arcTo(w, 0, w, r, r);
+        ctx.lineTo(w, h - r);
+        ctx.arcTo(w, h, w - r, h, r);
+        ctx.lineTo(r, h);
+        ctx.arcTo(0, h, 0, h - r, r);
+        ctx.lineTo(0, r);
+        ctx.arcTo(0, 0, r, 0, r);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 110px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(this.data.text, w / 2, h / 2 + 10);
+
+        const texture = new THREE.CanvasTexture(canvas);
+        texture.minFilter = THREE.LinearFilter;
+
+        this.el.setAttribute('material', {
+          src: texture,
+          transparent: true,
+          opacity: 0.95,
+          shader: 'flat'
+        });
+      }
+    });
+  </script>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    #ui-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .loading-screen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #1a1a1a;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      transition: opacity 0.5s ease;
+    }
+
+    .loading-screen h1 {
+      font-family: sans-serif;
+      margin-bottom: 10px;
+    }
+
+    .spinner {
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top: 4px solid #fff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .scan-frame {
+      border: 2px dashed rgba(255, 255, 255, 0.7);
+      border-radius: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 60%;
+      box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);
+    }
+
+    .instruction {
+      color: white;
+      text-align: center;
+      margin-top: auto;
+      font-family: sans-serif;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .label-plane {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 15px;
+      font-family: sans-serif;
+      font-size: 24px;
+      text-align: center;
+      border: 2px solid #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loading-screen" id="loading-screen">
+    <h1>Mantis AR</h1>
+    <div class="spinner"></div>
+    <p>Starting Camera...</p>
+  </div>
+
+  <div id="ui-layer">
+    <div class="scan-frame"></div>
+    <div class="instruction">Point your camera at the Unit 1 photos</div>
+  </div>
+
+  <!-- 
+      MindAR Scene setup. 
+      Note: filterMinCF and filterBeta help reduce jitter.
+      imageTargetSrc points to the compiled target file.
+    -->
+  <a-scene
+    mindar-image="imageTargetSrc: ./assets/ar/unit1_opener.mind; uiLoading: no; uiScanning: no; filterMinCF:0.001; filterBeta: 10;"
+    color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
+    device-orientation-permission-ui="enabled: false">
+
+    <a-assets>
+      <!-- For fallback if we don't have images, we can use a-text or basic planes -->
+      <!-- But per instructions, labels overlaying the recognized concepts -->
+    </a-assets>
+
+    <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+    <!-- Target 0: Friends in the city -->
+    <a-entity mindar-image-target="targetIndex: 0">
+      <!-- Overlay label for 'Friend' -->
+      <a-plane position="0 0.1 0.1" width="0.6" height="0.15" pill-label="text: FRIEND; color: #882B41"></a-plane>
+    </a-entity>
+
+    <!-- Target 1: A family selfie -->
+    <a-entity mindar-image-target="targetIndex: 1">
+      <a-plane position="-0.3 0.3 0.1" width="0.6" height="0.15" pill-label="text: FATHER; color: #E4A13A"></a-plane>
+      <a-plane position="0.3 0.3 0.1" width="0.6" height="0.15" pill-label="text: MOTHER; color: #882B41"></a-plane>
+      <a-plane position="0 -0.2 0.1" width="0.75" height="0.15" pill-label="text: BROTHERS; color: #447766"></a-plane>
+    </a-entity>
+
+    <!-- Target 2: Generations -->
+    <a-entity mindar-image-target="targetIndex: 2">
+      <a-plane position="-0.3 0.25 0.1" width="0.7" height="0.175"
+        pill-label="text: GRANDFATHER; color: #447766"></a-plane>
+      <a-plane position="0.3 -0.2 0.1" width="0.6" height="0.15" pill-label="text: GRANDSON; color: #C28254"></a-plane>
+    </a-entity>
+  </a-scene>
+
+  <script>
+    // Handle loading screen
+    const sceneEl = document.querySelector('a-scene');
+    const loadingScreen = document.getElementById('loading-screen');
+
+    sceneEl.addEventListener('arReady', () => {
+      loadingScreen.style.opacity = '0';
+      setTimeout(() => {
+        loadingScreen.style.display = 'none';
+      }, 500);
+    });
+
+    sceneEl.addEventListener('arError', (event) => {
+      loadingScreen.innerHTML = `
+          <h1>Camera Error</h1>
+          <p>Please ensure you have granted camera permissions and are using HTTPS.</p>
+        `;
+    });
+
+    // Post message to parent iframe to let React know AR is ready or send events
+    window.addEventListener('message', (e) => {
+      if (e.data === 'stopAR') {
+        // Attempt to stop the AR system cleanly
+        const arSystem = sceneEl.systems['mindar-image-system'];
+        if (arSystem) {
+          arSystem.stop();
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

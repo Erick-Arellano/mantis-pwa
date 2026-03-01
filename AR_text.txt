@@ -1,0 +1,56 @@
+Technical Brief: Mantis AR Hybrid Engine Integration 
+Project: Strategies Digital Learning Assets - PWA 
+1. Objective 
+Implement a marker-based Augmented Reality (AR) feature for the "Family and Friends" Unit 1 
+opener. The system must recognize specific images and overlay digital labels (e.g., "Friend", 
+"Mother", "Father") directly onto the identified people in the photographs. 
++2 
+ 
+2. Core Architecture 
+The engine uses a hybrid approach based on Mind-AR for image tracking to ensure zero-cost 
+third-party licensing. 
+●​ Tracking Library: mind-ar-image-aframe.prod.js (v1.2.5). 
+●​ Target File: targets.mind (containing the trained patterns for the three main photos in the 
+opener ).​
++1​
+ 
+3. Implementation Logic (The "Mantis AR Core") 
+Please implement the following code structure to handle the 1:1 aspect ratio of the assets and 
+the dynamic label positioning: 
+ 
+HTML 
+ 
+ 
+<a-scene ​
+  mindar-image="imageTargetSrc: ./unit1_opener.mind; filterMinCF:0.001; filterBeta: 10;" ​
+  color-space="sRGB" ​
+  renderer="colorManagement: true, physicallyCorrectLights" ​
+  vr-mode-ui="enabled: false">​
+  ​
+  <a-assets>​
+    <img id="label-friend" src="assets/label_friend.png">​
+    <img id="label-mother" src="assets/label_mother.png">​
+  </a-assets>​
+​
+  <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>​
+​
+  <a-entity mindar-image-target="targetIndex: 0">​
+    <a-image src="#label-friend" position="-0.3 0.2 0.1" width="0.4" height="0.15"></a-image>​
+    <a-image src="#label-friend" position="0.3 0.2 0.1" width="0.4" height="0.15"></a-image>​
+  </a-entity>​
+</a-scene>​
+ 
+4. Required Assets & Optimization 
+To maintain PWA performance, all AR assets must follow these standards: 
+●​ Format: Transparent PNGs for labels. 
+●​ Markers: Use the three main photos from the provided PDF as individual targets in the 
+.mind file.​
++1​
+ 
+●​ Auto-Scaling Script: Ensure the adjustVideoRatio or adjustLabelRatio function is active to 
+prevent stretching on different device viewports. 
+5. Interaction UI 
+●​ Loading Screen: Display the Mantis logo until the arReady event is fired. 
+●​ Permissions: Handle the arError event to guide users on enabling camera access in 
+mobile browsers. 
+ 

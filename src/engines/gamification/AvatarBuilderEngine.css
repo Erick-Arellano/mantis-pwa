@@ -1,0 +1,283 @@
+.avatar-builder {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.question-banner {
+    background: var(--theme-unit, var(--color-sec-2));
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    /* Pill shape */
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    margin: 0 auto;
+    /* Center the pill */
+}
+
+.question-banner h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+.progress-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.progress-dots .dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.progress-dots .dot.completed {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.progress-dots .dot.active {
+    background: white;
+    transform: scale(1.3);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.builder-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* --------------------
+   AVATAR CANVAS (2D Layers)
+   -------------------- */
+.avatar-canvas-container {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    border: 2px dashed var(--border);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.avatar-canvas {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.avatar-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Ensure all 800x800 transparent PNGs scale correctly together */
+    pointer-events: none;
+    /* Let clicks pass through if needed */
+    transition: opacity 0.3s ease;
+}
+
+/* Z-Index Stacking Order */
+.base-layer {
+    z-index: 10;
+}
+
+.feature-layer[alt="Eyes"] {
+    z-index: 20;
+}
+
+.feature-layer[alt="Facial Hair"] {
+    z-index: 30;
+}
+
+.feature-layer[alt="Hair"] {
+    z-index: 40;
+}
+
+.feature-layer[alt="Accessories"] {
+    z-index: 50;
+}
+
+/* --------------------
+   SUCCESS REVEAL
+   -------------------- */
+.success-reveal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: white;
+}
+
+.reveal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.fade-in {
+    animation: fadeIn 0.8s forwards;
+}
+
+.success-message {
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.success-message h4 {
+    color: var(--theme-book, #10b981);
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+}
+
+.bounce-in {
+    animation: bounceIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* --------------------
+   CONTROLS (Tabs & Grid)
+   -------------------- */
+.builder-controls {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.builder-controls.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.category-tabs {
+    display: flex;
+    overflow-x: auto;
+    background: var(--bg-alt);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.tab-btn {
+    flex: 1;
+    white-space: nowrap;
+    min-width: 80px;
+    padding: 0.8rem 1rem;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+    background: white;
+    color: var(--theme-unit, var(--color-sec-2));
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.options-grid {
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 1rem;
+    background: white;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    min-height: 150px;
+}
+
+.option-btn {
+    aspect-ratio: 1;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--bg-alt);
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    overflow: hidden;
+}
+
+.option-btn:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+}
+
+.option-btn.selected {
+    border-color: var(--theme-unit, var(--color-sec-2));
+    background: var(--surface);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    /* Temporary fallback color if theme var missing */
+}
+
+.option-thumb {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}

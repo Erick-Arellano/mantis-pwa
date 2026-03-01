@@ -1,0 +1,275 @@
+{
+  "id": "U1",
+  "title": "Family and Friends",
+  "goals": [
+    "Introduce yourself and others",
+    "Identify and describe family members",
+    "Share personal information"
+  ],
+  "lessons": [
+    {
+      "id": "L1A",
+      "title": "Lesson A: Introduce yourself",
+      "activities": [
+        {
+          "id": "act_vocab_1",
+          "type": "Vocabulary",
+          "title": "Family Tree",
+          "engine": "DragDropEngine",
+          "icons": [
+            3
+          ],
+          "content": {
+            "instruction": "Look at the family tree. Drag the words to the correct person.",
+            "background_image": "/assets/images/u1_family_tree.png",
+            "draggable_labels": [
+              "aunt",
+              "brother",
+              "cousin",
+              "daughter",
+              "father",
+              "mother",
+              "(grand) parents",
+              "sister",
+              "son",
+              "uncle"
+            ],
+            "targets": [
+              {
+                "id": "t1",
+                "correct_label": "mother",
+                "x": 150,
+                "y": 50,
+                "context": "Susan is James's..."
+              },
+              {
+                "id": "t2",
+                "correct_label": "brother",
+                "x": 140,
+                "y": 80,
+                "context": "Ian is Anne's..."
+              },
+              {
+                "id": "t3",
+                "correct_label": "son",
+                "x": 65,
+                "y": 80,
+                "context": "James is John's..."
+              },
+              {
+                "id": "t4",
+                "correct_label": "cousin",
+                "x": 85,
+                "y": 80,
+                "context": "Charles is Ian's..."
+              },
+              {
+                "id": "t5",
+                "correct_label": "daughter",
+                "x": 35,
+                "y": 80,
+                "context": "Anne is Emma's..."
+              },
+              {
+                "id": "t6",
+                "correct_label": "grand parents",
+                "x": 60,
+                "y": 40,
+                "context": "Peter and Mary are James and Charles's..."
+              },
+              {
+                "id": "t7",
+                "correct_label": "aunt",
+                "x": 45,
+                "y": 60,
+                "context": "Emma is Charles's..."
+              },
+              {
+                "id": "t8",
+                "correct_label": "father",
+                "x": 60,
+                "y": 20,
+                "context": "Peter is Tom's..."
+              },
+              {
+                "id": "t9",
+                "correct_label": "sister",
+                "x": 30,
+                "y": 80,
+                "context": "Anne is Ian's..."
+              },
+              {
+                "id": "t10",
+                "correct_label": "uncle",
+                "x": 90,
+                "y": 50,
+                "context": "Tom is Anne's..."
+              }
+            ]
+          }
+        },
+        {
+          "id": "act_grammar_1",
+          "type": "Grammar",
+          "title": "Be: statements, have/has",
+          "engine": "GemQuizEngine",
+          "icons": [
+            4
+          ],
+          "content": {
+            "instruction": "Complete the sentences using am, is, and are. You have 10 seconds per question!",
+            "timer": 10,
+            "questions": [
+              {
+                "text": "Emma and Anne _____ mother and daughter.",
+                "options": [
+                  "am",
+                  "is",
+                  "are"
+                ],
+                "correct_answer": "are"
+              },
+              {
+                "text": "Peter and Mary _____ grandparents.",
+                "options": [
+                  "am",
+                  "is",
+                  "are"
+                ],
+                "correct_answer": "are"
+              },
+              {
+                "text": "I _____ a teacher.",
+                "options": [
+                  "am",
+                  "is",
+                  "are"
+                ],
+                "correct_answer": "am"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "L1B",
+      "title": "Lesson B: A class assignment",
+      "activities": [
+        {
+          "id": "act_reading_1",
+          "type": "Reading Inmersive",
+          "title": "Emilio's class assignment",
+          "engine": "KaraokeReadingEngine",
+          "icons": [
+            5,
+            6
+          ],
+          "content": {
+            "instruction": "Listen and read Emilio’s class assignment.",
+            "audio_url": "/assets/audio/u1_emilio_reading.mp3",
+            "text": "My father is tall. He’s got short, brown hair and brown eyes. He’s got a beard. My mother is average height. She’s got curly hair and blue eyes. She’s got a birthmark on her arm.",
+            "sync_data": "/assets/data/u1_emilio_sync.json"
+          }
+        },
+        {
+          "id": "act_strategy_1",
+          "type": "Reading Strategy",
+          "title": "Scanning",
+          "engine": "SpotlightEngine",
+          "icons": [
+            6,
+            7
+          ],
+          "content": {
+            "instruction": "Scanning: You don’t always need to understand every word. Find the specific words.",
+            "tasks": [
+              {
+                "prompt": "Find the word 'beard'",
+                "target_text": "beard"
+              },
+              {
+                "prompt": "Find the word 'curly hair'",
+                "target_text": "curly hair"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "L1C",
+      "title": "Lesson C: Personal Information",
+      "activities": [
+        {
+          "id": "act_listening_1",
+          "type": "Listening",
+          "title": "Listening for numbers",
+          "engine": "SmartFormEngine",
+          "icons": [
+            1,
+            8
+          ],
+          "content": {
+            "instruction": "Listen to these people give personal information. Complete the chart.",
+            "audio_url": "/assets/audio/u1_mariana_info.mp3",
+            "form_fields": [
+              {
+                "label": "Name",
+                "type": "text",
+                "correct_answer": "Mariana"
+              },
+              {
+                "label": "Age",
+                "type": "number",
+                "correct_answer": "18"
+              },
+              {
+                "label": "Cell number",
+                "type": "tel",
+                "correct_answer": "3335678910"
+              }
+            ]
+          }
+        },
+        {
+          "id": "act_pronunciation_1",
+          "type": "Pronunciation",
+          "title": "Long e and short i sounds",
+          "engine": "AudioPracticeEngine",
+          "icons": [
+            9
+          ],
+          "content": {
+            "instruction": "Listen and repeat the sentences.",
+            "reference_audio": "/assets/audio/u1_pronunciation.mp3",
+            "phrases": [
+              "This is my mother.",
+              "We are in this class."
+            ]
+          }
+        },
+        {
+          "id": "act_writing_1",
+          "type": "Writing",
+          "title": "A personal profile",
+          "engine": "WritingChecklistEngine",
+          "icons": [
+            10,
+            11
+          ],
+          "content": {
+            "instruction": "Write a similar profile about you. Review your work before sending.",
+            "model_text": "My name is Angela Davis. I am from Belize. I'm a student at George V Vocational School...",
+            "checklist": [
+              "Every sentence begins with an initial capital and ends with a period.",
+              "Every sentence has a subject and a verb.",
+              "The forms of the verb be and the subject pronouns are correct.",
+              "The spelling of the vocabulary words is correct."
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

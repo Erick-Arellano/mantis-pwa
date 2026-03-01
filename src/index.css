@@ -1,0 +1,300 @@
+/* --------------------
+   DESIGN SYSTEM TOKENS
+   -------------------- */
+@font-face {
+  font-family: 'Deuterium Variable';
+  src: url('/assets/fonts/DeuteriumVariable.woff2') format('woff2-variations'),
+    url('/assets/fonts/DeuteriumVariable.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Dynamic Theme Overrides (Set by React Context) */
+  --theme-book: #882B41;
+  /* Default to Book 1 */
+  --theme-unit: #E4A139;
+  /* Default to Unit 1 */
+
+  /* Colores Base (Books) */
+  --color-base-1: #882B41;
+  --color-base-2: #2E7784;
+  --color-base-3: #00A9B5;
+  --color-base-4: #C95B23;
+  --color-base-5: #A7BE38;
+  --color-base-6: #E4A139;
+
+  /* Colores Secundarios (Units) */
+  --color-sec-1: #944B88;
+  --color-sec-2: #2C537D;
+  --color-sec-3: #66BB99;
+  --color-sec-4: #99643E;
+  --color-sec-5: #405A54;
+  --color-sec-6: #517673;
+  --color-sec-7: #89A59B;
+  --color-sec-8: #DAE2DE;
+  --color-sec-9: #4D9B40;
+  --color-sec-10: #F5821F;
+  --color-sec-comodin: #F2706C;
+
+  /* Neutrals & UI Structure */
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --text-light: #f1f5f9;
+
+  /* Bento Layout Radius */
+  --bento-radius: 50px;
+  --radius-lg: 30px;
+  /* For nested bento elements */
+  --radius-md: 16px;
+  --radius-sm: 8px;
+
+  /* Bento Shadows */
+  --bento-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+
+  font-family: 'Deuterium Variable', 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+/* Layout */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  padding: 1rem 1.5rem;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  font-weight: 800;
+  flex: 1;
+  text-align: center;
+}
+
+.back-btn {
+  background: transparent;
+  color: var(--text-main);
+  font-size: 1.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn:hover {
+  background: #f1f5f9;
+}
+
+.lesson-badge {
+  background: #f1f5f9;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.app-content {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.app-footer {
+  background: var(--surface);
+  border-top: 1px solid #e2e8f0;
+  padding: 1rem;
+}
+
+.app-footer nav {
+  display: flex;
+  justify-content: space-around;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+button {
+  border: none;
+  background: var(--surface);
+  font-family: inherit;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background: #89A59B;
+  color: white;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Activity Navigation */
+.activity-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.activity-navigation label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.activity-tabs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.activity-tabs button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0.25rem;
+  opacity: 0.5;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.activity-tabs button:hover {
+  background: transparent;
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.activity-tabs button.active {
+  background: transparent;
+  color: inherit;
+  border: none;
+  opacity: 1;
+  transform: scale(1.15);
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
+}
+
+/* Engine Wrapper */
+.engine-wrapper {
+  flex: 1;
+  background: var(--surface);
+  border-radius: var(--bento-radius);
+  /* Updated to Bento 50px */
+  padding: 2.5rem;
+  box-shadow: var(--bento-shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Global Bento Utilities */
+.bento-box {
+  background: var(--surface);
+  border-radius: var(--bento-radius);
+  padding: 2rem;
+  box-shadow: var(--bento-shadow);
+  overflow: hidden;
+}
+
+.bento-grid {
+  display: grid;
+  gap: 1.5rem;
+  /* Columns configured per usage */
+}
+
+/* Typography Classes */
+.text-light {
+  font-weight: 300;
+}
+
+.text-medium {
+  font-weight: 480;
+}
+
+.text-bold {
+  font-weight: 560;
+}
+
+.text-black {
+  font-weight: 700;
+}
+
+.engine-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.engine-container h2 {
+  margin-top: 0;
+  color: var(--text-main);
+}
+
+.placeholder-box {
+  flex: 1;
+  border: 2px dashed #cbd5e1;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 1rem;
+  min-height: 200px;
+}
+
+/* Lesson Navigation */
+.lesson-navigation {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1.5rem;
+}
+
+.lesson-navigation button {
+  background: #f1f5f9;
+}

@@ -1,0 +1,10 @@
+mantis-pwa/
+├── public/              # Assets estáticos (iconos, manifest)
+├── src/
+│   ├── assets/          # Modelos 3D (.glb), Audios (.mp3)
+│   ├── components/      # UI Reutilizable (Botones, Layout)
+│   ├── engines/         # El "cerebro" (Motor de AR, Motor de Quizzes)
+│   ├── data/            # Los JSON de cada unidad (aquí vive el contenido)
+│   └── App.jsx          # El router principal
+├── index.html
+└── vite.config.js       # Configuración de PWA y Workbox

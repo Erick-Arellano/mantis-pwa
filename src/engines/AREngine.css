@@ -1,0 +1,90 @@
+.ar-engine-container {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    aspect-ratio: 3 / 4;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--surface);
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.ar-instruction-banner {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    z-index: 10;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.ar-instruction-banner p {
+    margin: 0;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.ar-startup-screen {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.ar-icon-large {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    color: var(--theme-unit);
+}
+
+.ar-active-view {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.ar-fullscreen-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: var(--radius-md);
+}
+
+.pulse-glow {
+    animation: arPulse 2s infinite;
+    background-color: var(--theme-unit);
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    border-radius: var(--radius-full);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+@keyframes arPulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--theme-unit);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(228, 161, 58, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(228, 161, 58, 0);
+    }
+}

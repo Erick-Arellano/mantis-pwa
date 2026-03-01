@@ -1,0 +1,1172 @@
+{
+  "id": "U1",
+  "title": "Family and Friends",
+  "goals": [
+    "Introduce yourself and others",
+    "Identify and describe family members",
+    "Share personal information"
+  ],
+  "lessons": [
+    {
+      "id": "L0",
+      "title": "Introduction: Who are they?",
+      "activities": [
+        {
+          "id": "act_intro_visual",
+          "type": "Opener",
+          "title": "Family and Friends Gateway",
+          "engine": "InteractiveGalleryEngine",
+          "icons": [
+            "image"
+          ],
+          "content": {
+            "instruction": "Look at the pictures. Tap to explore.",
+            "questions": [
+              "Who are these people?",
+              "Are they friends or family?",
+              "What makes them similar? What makes them different?"
+            ],
+            "gallery": [
+              {
+                "id": "g1",
+                "image_url": "/assets/images/intro_pic1.jpg",
+                "title": "Friends in the city",
+                "description": "A group of women looking at a phone together."
+              },
+              {
+                "id": "g2",
+                "image_url": "/assets/images/intro_pic2.jpg",
+                "title": "A family selfie",
+                "description": "A father and mother taking a selfie with their two sons."
+              },
+              {
+                "id": "g3",
+                "image_url": "/assets/images/intro_pic3.jpg",
+                "title": "Generations",
+                "description": "An older man talking with a young boy."
+              }
+            ]
+          }
+        },
+        {
+          "id": "act_intro_ar",
+          "type": "Opener",
+          "title": "AR Scanner",
+          "engine": "AREngine",
+          "icons": [
+            "ar"
+          ],
+          "content": {
+            "instruction": "Point your camera at the book images to discover the vocabulary."
+          }
+        }
+      ]
+    },
+    {
+      "id": "L1A",
+      "title": "Lesson A: Introduce yourself",
+      "activities": [
+        {
+          "id": "act_vocab_0",
+          "type": "Vocabulary",
+          "title": "Family Members",
+          "engine": "AudioPracticeEngine",
+          "icons": [
+            "audio"
+          ],
+          "content": {
+            "instruction": "Listen and repeat the words for family members.",
+            "audio_url": "/assets/audio/u1_family_words.mp3",
+            "words": [
+              "aunt",
+              "brother",
+              "cousin",
+              "daughter",
+              "father",
+              "mother",
+              "(grand)parents",
+              "sister",
+              "son",
+              "uncle"
+            ]
+          }
+        },
+        {
+          "id": "act_vocab_1",
+          "type": "Vocabulary",
+          "title": "Family Tree",
+          "engine": "DragDropEngine",
+          "icons": [
+            "drag"
+          ],
+          "content": {
+            "instruction": "Look at the family tree. Drag the words to the correct person.",
+            "background_image": "/assets/images/u1_family_tree.png",
+            "draggable_labels": [
+              "mother",
+              "(grand)parents",
+              "cousin",
+              "daughter",
+              "aunt",
+              "son",
+              "brother",
+              "sister",
+              "father",
+              "uncle"
+            ],
+            "targets": [
+              {
+                "id": "t1",
+                "correct_label": "son",
+                "x": 62,
+                "y": 75
+              },
+              {
+                "id": "t2",
+                "correct_label": "aunt",
+                "x": 33,
+                "y": 53
+              },
+              {
+                "id": "t3",
+                "correct_label": "(grand)parents",
+                "x": 50,
+                "y": 28
+              },
+              {
+                "id": "t4",
+                "correct_label": "sister",
+                "x": 16,
+                "y": 75
+              },
+              {
+                "id": "t5",
+                "correct_label": "uncle",
+                "x": 90,
+                "y": 65
+              },
+              {
+                "id": "t6",
+                "correct_label": "mother",
+                "x": 75,
+                "y": 52
+              }
+            ]
+          }
+        },
+        {
+          "id": "act_conversation_1",
+          "type": "Conversation",
+          "title": "Meeting new people",
+          "engine": "KaraokeEngine",
+          "icons": [
+            "karaoke"
+          ],
+          "content": {
+            "instruction": "Listen and practice the conversation. Use the buttons to take a role.",
+            "audio_url": "/assets/audio/u1_conversation_1.mp3",
+            "characters": [
+              {
+                "name": "Robbie",
+                "color": "#00A9B5"
+              },
+              {
+                "name": "Omar",
+                "color": "#A7BE38"
+              }
+            ],
+            "dialogue": [
+              {
+                "character": "Robbie",
+                "text": "Hi there! I’m Robbie.",
+                "startTime": 0,
+                "endTime": 1.2
+              },
+              {
+                "character": "Omar",
+                "text": "Hi, Robbie. I’m Omar.",
+                "startTime": 1.3,
+                "endTime": 2.9
+              }
+            ]
+          }
+        },
+        {
+          "id": "act_grammar_1",
+          "type": "Grammar",
+          "title": "Be: statements, have/has",
+          "engine": "GemQuizEngine",
+          "icons": [
+            "gems"
+          ],
+          "content": {
+            "instruction": "Grammar Challenge",
+            "timer": 10,
+            "lives": 5,
+            "questions": [
+              {
+                "instruction": "Complete the sentences using am, is, and are.",
+                "text": "Emma and Anne _____ mother and daughter.",
+                "options": [
+                  "am",
+                  "is",
+                  "are"
+                ],
+                "correct_answer": "are"
+              },
+              {
+                "instruction": "Complete the sentences using am, is, and are.",
+                "text": "Peter and Mary _____ grandparents.",
+                "options": [
+                  "am",
+                  "is",
+                  "are"
+                ],
+                "correct_answer": "are"
+              },
+              {
+                "instruction": "Complete the sentences using am, is, and are.",
+                "text": "Ian _____ James’s cousin.",
+                "options": [
+                  "am",
+                  "is",
+                  "are"
+                ],
+                "correct_answer": "is"
+              },
+              {
+                "instruction": "Complete the sentences using am, is, and are.",
+                "text": "I _____ a teacher.",
+                "options": [
+                  "am",
+                  "is",
+                  "are"
+                ],
+                "correct_answer": "am"
+              },
+              {
+                "instruction": "Complete the sentences using am, is, and are.",
+                "text": "John and Susan _____ James and Charles’s parents.",
+                "options": [
+                  "am",
+                  "is",
+                  "are"
+                ],
+                "correct_answer": "are"
+              },
+              {
+                "instruction": "Complete the sentences using am, is, and are.",
+                "text": "Tom _____ Emma and John’s brother.",
+                "options": [
+                  "am",
+                  "is",
+                  "are"
+                ],
+                "correct_answer": "is"
+              },
+              {
+                "instruction": "Complete the sentences using have and has.",
+                "text": "John _____ a moustache and a beard.",
+                "options": [
+                  "have",
+                  "has"
+                ],
+                "correct_answer": "has"
+              },
+              {
+                "instruction": "Complete the sentences using have and has.",
+                "text": "Anne and I _____ blonde, curly hair, and blue eyes.",
+                "options": [
+                  "have",
+                  "has"
+                ],
+                "correct_answer": "have"
+              },
+              {
+                "instruction": "Complete the sentences using have and has.",
+                "text": "James _____ two cousins.",
+                "options": [
+                  "have",
+                  "has"
+                ],
+                "correct_answer": "has"
+              },
+              {
+                "instruction": "Complete the sentences using have and has.",
+                "text": "Peter and Mary _____ four grandchildren.",
+                "options": [
+                  "have",
+                  "has"
+                ],
+                "correct_answer": "have"
+              },
+              {
+                "instruction": "Complete the sentences using have and has.",
+                "text": "Emma and Robert _____ a son and a daughter.",
+                "options": [
+                  "have",
+                  "has"
+                ],
+                "correct_answer": "have"
+              },
+              {
+                "instruction": "Complete the sentences using have and has.",
+                "text": "I _____ blue eyes.",
+                "options": [
+                  "have",
+                  "has"
+                ],
+                "correct_answer": "have"
+              },
+              {
+                "instruction": "Choose a pronoun to replace the word in brackets.",
+                "text": "(Susan) _____ is John’s wife.",
+                "options": [
+                  "I",
+                  "we",
+                  "you",
+                  "he",
+                  "she",
+                  "they"
+                ],
+                "correct_answer": "she"
+              },
+              {
+                "instruction": "Choose a pronoun to replace the word in brackets.",
+                "text": "(Robert and I) _____ are average height.",
+                "options": [
+                  "I",
+                  "we",
+                  "you",
+                  "he",
+                  "she",
+                  "they"
+                ],
+                "correct_answer": "we"
+              },
+              {
+                "instruction": "Choose a pronoun to replace the word in brackets.",
+                "text": "(Robert) _____ is James’s uncle.",
+                "options": [
+                  "I",
+                  "we",
+                  "you",
+                  "he",
+                  "she",
+                  "they"
+                ],
+                "correct_answer": "he"
+              },
+              {
+                "instruction": "Choose a pronoun to replace the word in brackets.",
+                "text": "(Emma and Susan) _____ are both mothers.",
+                "options": [
+                  "I",
+                  "we",
+                  "you",
+                  "he",
+                  "she",
+                  "they"
+                ],
+                "correct_answer": "they"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "L1B",
+      "title": "Lesson B: A class assignment",
+      "activities": [
+        {
+          "id": "act_reading_1",
+          "type": "Reading",
+          "title": "Emilio's class assignment",
+          "engine": "KaraokeReadingEngine",
+          "icons": [
+            "reading",
+            "3d",
+            "dictionary",
+            "drag"
+          ],
+          "content": {
+            "instruction": "Describe your family members.",
+            "audio_url": "/assets/audio/u1_emilio_reading.mp3",
+            "slides": [
+              {
+                "id": "slide1",
+                "image_url": "/assets/images/u1_emilio_father.jpg",
+                "text": "My father is tall. He’s got short, brown hair and brown eyes. He’s got a beard.",
+                "sync_data": [
+                  {
+                    "text": "My ",
+                    "start": 0.0,
+                    "end": 0.2
+                  },
+                  {
+                    "text": "father ",
+                    "start": 0.2,
+                    "end": 0.5
+                  },
+                  {
+                    "text": "is ",
+                    "start": 0.5,
+                    "end": 0.7
+                  },
+                  {
+                    "text": "tall. ",
+                    "start": 0.7,
+                    "end": 1.2
+                  },
+                  {
+                    "text": "He’s ",
+                    "start": 1.5,
+                    "end": 1.7
+                  },
+                  {
+                    "text": "got ",
+                    "start": 1.7,
+                    "end": 1.9
+                  },
+                  {
+                    "text": "short, ",
+                    "start": 1.9,
+                    "end": 2.4
+                  },
+                  {
+                    "text": "brown ",
+                    "start": 2.6,
+                    "end": 3.0
+                  },
+                  {
+                    "text": "hair ",
+                    "start": 3.0,
+                    "end": 3.3
+                  },
+                  {
+                    "text": "and ",
+                    "start": 3.4,
+                    "end": 3.6
+                  },
+                  {
+                    "text": "brown ",
+                    "start": 3.6,
+                    "end": 3.9
+                  },
+                  {
+                    "text": "eyes. ",
+                    "start": 3.9,
+                    "end": 4.5
+                  },
+                  {
+                    "text": "He’s ",
+                    "start": 4.8,
+                    "end": 5.0
+                  },
+                  {
+                    "text": "got ",
+                    "start": 5.0,
+                    "end": 5.2
+                  },
+                  {
+                    "text": "a ",
+                    "start": 5.2,
+                    "end": 5.4
+                  },
+                  {
+                    "text": "beard. ",
+                    "start": 5.4,
+                    "end": 6.0
+                  }
+                ]
+              },
+              {
+                "id": "slide2",
+                "image_url": "/assets/images/u1_emilio_mother.jpg",
+                "text": "My mother is average height. She’s got curly hair and blue eyes. She’s got a birthmark on her arm.",
+                "sync_data": [
+                  {
+                    "text": "My ",
+                    "start": 6.5,
+                    "end": 6.7
+                  },
+                  {
+                    "text": "mother ",
+                    "start": 6.7,
+                    "end": 7.0
+                  },
+                  {
+                    "text": "is ",
+                    "start": 7.0,
+                    "end": 7.2
+                  },
+                  {
+                    "text": "average ",
+                    "start": 7.2,
+                    "end": 7.7
+                  },
+                  {
+                    "text": "height. ",
+                    "start": 7.7,
+                    "end": 8.3
+                  },
+                  {
+                    "text": "She’s ",
+                    "start": 8.5,
+                    "end": 8.7
+                  },
+                  {
+                    "text": "got ",
+                    "start": 8.7,
+                    "end": 8.9
+                  },
+                  {
+                    "text": "curly ",
+                    "start": 8.9,
+                    "end": 9.4
+                  },
+                  {
+                    "text": "hair ",
+                    "start": 9.4,
+                    "end": 9.7
+                  },
+                  {
+                    "text": "and ",
+                    "start": 9.8,
+                    "end": 10.0
+                  },
+                  {
+                    "text": "blue ",
+                    "start": 10.0,
+                    "end": 10.3
+                  },
+                  {
+                    "text": "eyes. ",
+                    "start": 10.3,
+                    "end": 10.8
+                  },
+                  {
+                    "text": "She’s ",
+                    "start": 11.0,
+                    "end": 11.2
+                  },
+                  {
+                    "text": "got ",
+                    "start": 11.2,
+                    "end": 11.4
+                  },
+                  {
+                    "text": "a ",
+                    "start": 11.4,
+                    "end": 11.5
+                  },
+                  {
+                    "text": "birthmark ",
+                    "start": 11.5,
+                    "end": 12.1
+                  },
+                  {
+                    "text": "on ",
+                    "start": 12.1,
+                    "end": 12.3
+                  },
+                  {
+                    "text": "her ",
+                    "start": 12.3,
+                    "end": 12.5
+                  },
+                  {
+                    "text": "arm. ",
+                    "start": 12.5,
+                    "end": 13.0
+                  }
+                ]
+              },
+              {
+                "id": "slide3",
+                "image_url": "/assets/images/u1_emilio_grandparents.jpg",
+                "text": "My grandfather is short and he's bald. My grandmother is short, too. She's got grey hair.",
+                "sync_data": [
+                  {
+                    "text": "My ",
+                    "start": 14,
+                    "end": 14.2
+                  },
+                  {
+                    "text": "grandfather ",
+                    "start": 14.2,
+                    "end": 14.9
+                  },
+                  {
+                    "text": "is ",
+                    "start": 14.9,
+                    "end": 15.6
+                  },
+                  {
+                    "text": "short ",
+                    "start": 15.6,
+                    "end": 16.1
+                  },
+                  {
+                    "text": "and ",
+                    "start": 16.1,
+                    "end": 16.3
+                  },
+                  {
+                    "text": "he's ",
+                    "start": 16.3,
+                    "end": 16.5
+                  },
+                  {
+                    "text": "bald. ",
+                    "start": 16.5,
+                    "end": 17.0
+                  },
+                  {
+                    "text": "My ",
+                    "start": 17.8,
+                    "end": 18.1
+                  },
+                  {
+                    "text": "grandmother ",
+                    "start": 18.1,
+                    "end": 18.4
+                  },
+                  {
+                    "text": "is ",
+                    "start": 18.4,
+                    "end": 18.6
+                  },
+                  {
+                    "text": "short, ",
+                    "start": 18.6,
+                    "end": 19.1
+                  },
+                  {
+                    "text": "too. ",
+                    "start": 19.1,
+                    "end": 19.7
+                  },
+                  {
+                    "text": "She's ",
+                    "start": 19.7,
+                    "end": 19.9
+                  },
+                  {
+                    "text": "got ",
+                    "start": 19.9,
+                    "end": 20.2
+                  },
+                  {
+                    "text": "grey ",
+                    "start": 20.2,
+                    "end": 20.6
+                  },
+                  {
+                    "text": "hair. ",
+                    "start": 20.6,
+                    "end": 21.1
+                  }
+                ]
+              },
+              {
+                "id": "slide4",
+                "image_url": "/assets/images/u1_emilio_uncle.jpg",
+                "text": "My uncle has got straight, black hair. He's a big man with a moustache. He's overweight. His wife is tall, and has got long, blonde hair. She's got green eyes.",
+                "sync_data": [
+                  {
+                    "text": "My ",
+                    "start": 22.0,
+                    "end": 22.2
+                  },
+                  {
+                    "text": "uncle ",
+                    "start": 22.2,
+                    "end": 22.6
+                  },
+                  {
+                    "text": "has ",
+                    "start": 22.6,
+                    "end": 22.8
+                  },
+                  {
+                    "text": "got ",
+                    "start": 22.8,
+                    "end": 23.0
+                  },
+                  {
+                    "text": "straight, ",
+                    "start": 23.0,
+                    "end": 23.6
+                  },
+                  {
+                    "text": "black ",
+                    "start": 23.8,
+                    "end": 24.2
+                  },
+                  {
+                    "text": "hair. ",
+                    "start": 24.2,
+                    "end": 24.7
+                  },
+                  {
+                    "text": "He's ",
+                    "start": 25.0,
+                    "end": 25.2
+                  },
+                  {
+                    "text": "a ",
+                    "start": 25.2,
+                    "end": 25.3
+                  },
+                  {
+                    "text": "big ",
+                    "start": 25.3,
+                    "end": 25.6
+                  },
+                  {
+                    "text": "man ",
+                    "start": 25.6,
+                    "end": 25.9
+                  },
+                  {
+                    "text": "with ",
+                    "start": 25.9,
+                    "end": 26.1
+                  },
+                  {
+                    "text": "a ",
+                    "start": 26.1,
+                    "end": 26.2
+                  },
+                  {
+                    "text": "moustache. ",
+                    "start": 26.2,
+                    "end": 26.8
+                  },
+                  {
+                    "text": "He's ",
+                    "start": 27.0,
+                    "end": 27.2
+                  },
+                  {
+                    "text": "overweight. ",
+                    "start": 27.2,
+                    "end": 27.8
+                  },
+                  {
+                    "text": "His ",
+                    "start": 29,
+                    "end": 29.4
+                  },
+                  {
+                    "text": "wife ",
+                    "start": 29.4,
+                    "end": 29.7
+                  },
+                  {
+                    "text": "is ",
+                    "start": 29.7,
+                    "end": 29.9
+                  },
+                  {
+                    "text": "tall, ",
+                    "start": 29.9,
+                    "end": 30.5
+                  },
+                  {
+                    "text": "and ",
+                    "start": 30.5,
+                    "end": 30.7
+                  },
+                  {
+                    "text": "has ",
+                    "start": 30.7,
+                    "end": 30.9
+                  },
+                  {
+                    "text": "got ",
+                    "start": 30.9,
+                    "end": 31.1
+                  },
+                  {
+                    "text": "long, ",
+                    "start": 31.1,
+                    "end": 31.6
+                  },
+                  {
+                    "text": "blonde ",
+                    "start": 31.8,
+                    "end": 32.3
+                  },
+                  {
+                    "text": "hair. ",
+                    "start": 32.3,
+                    "end": 32.8
+                  },
+                  {
+                    "text": "She's ",
+                    "start": 33.0,
+                    "end": 33.2
+                  },
+                  {
+                    "text": "got ",
+                    "start": 33.2,
+                    "end": 33.4
+                  },
+                  {
+                    "text": "green ",
+                    "start": 33.4,
+                    "end": 33.8
+                  },
+                  {
+                    "text": "eyes. ",
+                    "start": 33.8,
+                    "end": 34.3
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "act_reading_builder",
+          "type": "Reading",
+          "title": "Answer the questions about Emilio's family",
+          "engine": "AvatarBuilderEngine",
+          "icons": [
+            "3d"
+          ],
+          "content": {
+            "instruction": "Build the avatar to answer the question.",
+            "available_features": {
+              "hair": [
+                {
+                  "id": "hair_short_brown",
+                  "name": "Short Brown",
+                  "url": "/assets/images/u1_avatar/hair_short_brown.png"
+                },
+                {
+                  "id": "hair_long_blonde",
+                  "name": "Long Blonde",
+                  "url": "/assets/images/u1_avatar/hair_long_blonde.png"
+                },
+                {
+                  "id": "hair_grey",
+                  "name": "Grey",
+                  "url": "/assets/images/u1_avatar/hair_grey.png"
+                },
+                {
+                  "id": "hair_bald",
+                  "name": "Bald",
+                  "url": "/assets/images/u1_avatar/hair_bald.png"
+                },
+                {
+                  "id": "hair_straight_black",
+                  "name": "Straight Black",
+                  "url": "/assets/images/u1_avatar/hair_straight_black.png"
+                }
+              ],
+              "eyes": [
+                {
+                  "id": "eyes_brown",
+                  "name": "Brown",
+                  "url": "/assets/images/u1_avatar/eyes_brown.png"
+                },
+                {
+                  "id": "eyes_blue",
+                  "name": "Blue",
+                  "url": "/assets/images/u1_avatar/eyes_blue.png"
+                },
+                {
+                  "id": "eyes_green",
+                  "name": "Green",
+                  "url": "/assets/images/u1_avatar/eyes_green.png"
+                }
+              ],
+              "facial_hair": [
+                {
+                  "id": "facial_beard",
+                  "name": "Beard",
+                  "url": "/assets/images/u1_avatar/facial_beard.png"
+                },
+                {
+                  "id": "facial_moustache",
+                  "name": "Moustache",
+                  "url": "/assets/images/u1_avatar/facial_moustache.png"
+                },
+                {
+                  "id": "facial_clean",
+                  "name": "Clean",
+                  "url": "/assets/images/u1_avatar/facial_clean.png"
+                }
+              ]
+            },
+            "questions": [
+              {
+                "id": "q1",
+                "text": "Who has grey hair?",
+                "required_features": {
+                  "hair": "hair_grey"
+                },
+                "success_message": "It's Emilio's grandmother!",
+                "success_image_url": "/assets/images/u1_emilio_grandparents.jpg"
+              },
+              {
+                "id": "q2",
+                "text": "Who has blue eyes?",
+                "required_features": {
+                  "eyes": "eyes_blue"
+                },
+                "success_message": "It's Emilio's mother!",
+                "success_image_url": "/assets/images/u1_emilio_mother.jpg"
+              },
+              {
+                "id": "q3",
+                "text": "Who has long blonde hair?",
+                "required_features": {
+                  "hair": "hair_long_blonde"
+                },
+                "success_message": "It's Emilio's mother!",
+                "success_image_url": "/assets/images/u1_emilio_mother.jpg"
+              },
+              {
+                "id": "q4",
+                "text": "Who has a beard?",
+                "required_features": {
+                  "facial_hair": "facial_beard"
+                },
+                "success_message": "It's Emilio's father!",
+                "success_image_url": "/assets/images/u1_emilio_father.jpg"
+              },
+              {
+                "id": "q5",
+                "text": "Who is bald?",
+                "required_features": {
+                  "hair": "hair_bald"
+                },
+                "success_message": "It's Emilio's grandfather!",
+                "success_image_url": "/assets/images/u1_emilio_grandparents.jpg"
+              }
+            ]
+          }
+        },
+        {
+          "id": "act_vocab_1",
+          "type": "Reading",
+          "title": "Vocabulary in context",
+          "engine": "SmartMatchEngine",
+          "icons": [
+            "drag"
+          ],
+          "content": {
+            "instruction": "Match the words from the box below the pictures.",
+            "items": [
+              {
+                "id": "v1",
+                "word": "birthmark",
+                "image_url": "/assets/images/u1_vocab_birthmark.jpg"
+              },
+              {
+                "id": "v2",
+                "word": "mole",
+                "image_url": "/assets/images/u1_vocab_mole.jpg"
+              },
+              {
+                "id": "v3",
+                "word": "scar",
+                "image_url": "/assets/images/u1_vocab_scar.jpg"
+              },
+              {
+                "id": "v4",
+                "word": "tattoo",
+                "image_url": "/assets/images/u1_vocab_tattoo.jpg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "L1C",
+      "title": "Lesson C: Personal Information",
+      "activities": [
+        {
+          "id": "act_listening_1",
+          "type": "Listening",
+          "title": "Numbers and Personal Information",
+          "engine": "AudioPopEngine",
+          "icons": [
+            "choice"
+          ],
+          "content": {
+            "phase1": {
+              "instruction": "Listen and tap the correct numbers.",
+              "grid_options": [
+                "22",
+                "37",
+                "14",
+                "24",
+                "15",
+                "13",
+                "16",
+                "26",
+                "17",
+                "30",
+                "18",
+                "28",
+                "19",
+                "39"
+              ],
+              "targets": [
+                {
+                  "id": "p1_1",
+                  "value": "13",
+                  "audio_url": "/assets/audio/u1_num_13.mp3"
+                },
+                {
+                  "id": "p1_2",
+                  "value": "30",
+                  "audio_url": "/assets/audio/u1_num_30.mp3"
+                },
+                {
+                  "id": "p1_3",
+                  "value": "14",
+                  "audio_url": "/assets/audio/u1_num_14.mp3"
+                },
+                {
+                  "id": "p1_4",
+                  "value": "39",
+                  "audio_url": "/assets/audio/u1_num_39.mp3"
+                }
+              ]
+            },
+            "phase2": {
+              "instruction": "Now listen and complete the information chart.",
+              "audio_url": "/assets/audio/u1_personal_info.mp3",
+              "form_fields": [
+                {
+                  "id": "f_name",
+                  "label": "Name",
+                  "answer": "Mariana"
+                },
+                {
+                  "id": "f_age",
+                  "label": "Age",
+                  "answer": "18"
+                },
+                {
+                  "id": "f_phone",
+                  "label": "Phone Number",
+                  "answer": "5 13 23 18"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "act_pronunciation_1",
+          "type": "Listening",
+          "title": "Pronunciation Practice",
+          "engine": "AudioPracticeEngine",
+          "icons": [
+            "audio"
+          ],
+          "content": {
+            "instruction": "Listen and repeat the sentences:",
+            "audio_url": "/assets/audio/u1_pronunciation.mp3",
+            "words": [
+              "1. This is my mother.",
+              "2. Mary is a teacher.",
+              "3. Peter is Ian's grandfather.",
+              "4. We are in this class."
+            ]
+          }
+        },
+        {
+          "id": "act_speaking_1",
+          "type": "Listening",
+          "title": "Speaking - Introducing yourself",
+          "engine": "KaraokeEngine",
+          "icons": [
+            "karaoke"
+          ],
+          "content": {
+            "instruction": "Take turns. Introduce yourself. Share some personal information. Use an imaginary name and imaginary information.",
+            "audio_url": "/assets/audio/u1_speaking_dan_carly.mp3",
+            "characters": [
+              {
+                "name": "Dan",
+                "color": "#0ea5e9"
+              },
+              {
+                "name": "Carly",
+                "color": "#e11d48"
+              }
+            ],
+            "dialogue": [
+              {
+                "character": "Dan",
+                "text": "Hello. My name is Dan.",
+                "startTime": 0,
+                "endTime": 2
+              },
+              {
+                "character": "Carly",
+                "text": "Hi, Dan. I'm Carly.",
+                "startTime": 2,
+                "endTime": 3.5
+              },
+              {
+                "character": "Carly",
+                "text": "How old are you, Dan?",
+                "startTime": 3.5,
+                "endTime": 4.5
+              },
+              {
+                "character": "Dan",
+                "text": "I'm 21.",
+                "startTime": 4.6,
+                "endTime": 6.3
+              },
+              {
+                "character": "Carly",
+                "text": "Can I have your phone number?",
+                "startTime": 6.4,
+                "endTime": 8.2
+              },
+              {
+                "character": "Dan",
+                "text": "Sure. It's 333 567 8910.",
+                "startTime": 8.3,
+                "endTime": 14.5
+              }
+            ]
+          }
+        },
+        {
+          "id": "act_writing_1",
+          "type": "Writing",
+          "title": "A personal profile",
+          "engine": "WritingChecklistEngine",
+          "icons": [
+            "write",
+            "check"
+          ],
+          "content": {
+            "instruction": "Write a similar profile about you. Review your work before sending.",
+            "model_text": "My name is Angela Davis. I am from Belize...",
+            "checklist": [
+              "Every sentence begins with an initial capital and ends with a period.",
+              "Every sentence has a subject and a verb.",
+              "The forms of the verb be and the subject pronouns are correct.",
+              "The spelling of the vocabulary words is correct.",
+              "My writing includes appropriate personal information."
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

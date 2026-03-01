@@ -1,0 +1,123 @@
+.gem-quiz-activity {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.gem-quiz-activity h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--surface);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    font-weight: 600;
+    border: 1px solid #e2e8f0;
+}
+
+.progress {
+    color: var(--text-muted);
+}
+
+.timer {
+    color: var(--text-main);
+    background: #f1f5f9;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    min-width: 60px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.timer.danger {
+    background: #fee2e2;
+    color: #ef4444;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.question-card {
+    background: white;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 2px solid #e2e8f0;
+}
+
+.question-card h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 1.4;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.option-button {
+    background: white;
+    border: 2px solid #cbd5e1;
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-main);
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.option-button:hover {
+    border-color: var(--secondary-color);
+    background: #f0fdf4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.option-button:active {
+    transform: translateY(0);
+}
+
+.gem-quiz-activity.finished {
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    padding: 3rem 1rem;
+}
+
+.score-board {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+}
+
+.score-board .score {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    display: block;
+    margin: 1rem 0;
+}

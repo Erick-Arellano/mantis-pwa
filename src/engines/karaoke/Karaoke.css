@@ -1,0 +1,161 @@
+.karaoke-activity {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.karaoke-activity h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.instruction {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* --------------------
+   IMMERSIVE READING 
+   -------------------- */
+.audio-control-bar {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #e2e8f0;
+}
+
+.audio-control-bar audio {
+    width: 100%;
+    max-width: 500px;
+    outline: none;
+}
+
+.karaoke-text-container {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--text-main);
+    border: 1px solid #e2e8f0;
+}
+
+.karaoke-segment {
+    transition: all 0.3s ease;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.active-segment {
+    background-color: #fef08a;
+    /* Yellow highlight */
+    color: #854d0e;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(250, 204, 21, 0.2);
+}
+
+.past-segment {
+    color: var(--text-muted);
+}
+
+/* --------------------
+   AUDIO PRACTICE 
+   -------------------- */
+.phrases-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.phrase-card {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.phrase-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-main);
+    font-style: italic;
+}
+
+.practice-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid #e2e8f0;
+}
+
+.reference-audio,
+.recording-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.reference-audio h4,
+.recording-section h4 {
+    margin: 0;
+    color: var(--text-main);
+    font-size: 1rem;
+}
+
+.record-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.record-btn {
+    background: #ef4444;
+    /* Red for recording */
+    box-shadow: 0 4px 6px rgba(239, 68, 68, 0.2);
+}
+
+.record-btn:hover {
+    background: #dc2626;
+}
+
+.stop-btn {
+    background: #64748b;
+    /* Gray for stop */
+}
+
+.stop-btn:hover {
+    background: #475569;
+}
+
+.recording-indicator {
+    color: #ef4444;
+    font-weight: 600;
+    animation: pulse 1.5s infinite alternate;
+}
+
+.playback-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #cbd5e1;
+}
+
+.playback-section h5 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+}
+
+.playback-section audio {
+    width: 100%;
+    max-width: 400px;
+}

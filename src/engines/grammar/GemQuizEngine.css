@@ -1,0 +1,189 @@
+.gem-quiz-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    height: 100%;
+    gap: 1.5rem;
+}
+
+.gem-quiz-container.end-state {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.quiz-hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: white;
+    border-radius: var(--radius-full);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.timer-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+    margin-right: 2rem;
+}
+
+.timer-bar-bg {
+    flex: 1;
+    height: 12px;
+    background-color: var(--neutral-300);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.timer-bar-fill {
+    height: 100%;
+    transition: width 1s linear, background-color 0.3s ease;
+}
+
+.timer-text {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--neutral-700);
+    min-width: 40px;
+}
+
+.gem-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.gem-icon {
+    transition: all 0.3s ease;
+}
+
+.gem-icon.lost {
+    opacity: 0.3;
+    stroke: var(--neutral-400);
+}
+
+.question-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.question-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--neutral-800);
+    line-height: 1.4;
+    margin-bottom: 2rem;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    width: 100%;
+}
+
+.option-btn {
+    padding: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border: 3px solid var(--theme-unit);
+    color: var(--theme-unit);
+    background-color: transparent;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.option-btn:hover:not(:disabled) {
+    background-color: var(--theme-unit);
+    color: white;
+}
+
+.option-btn:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+.option-btn.correct,
+.option-btn.correct-reveal {
+    background-color: var(--secondary-green);
+    border-color: var(--secondary-green);
+    color: white;
+    animation: pop 0.3s ease;
+}
+
+.option-btn.incorrect {
+    background-color: var(--secondary-red);
+    border-color: var(--secondary-red);
+    color: white;
+    animation: shake 0.4s ease;
+}
+
+.result-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 3rem;
+    max-width: 400px;
+}
+
+.result-card h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.final-gems {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.retry {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,290 @@
+.visual-activity {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    overflow: hidden;
+    /* Important to hide overflowing 3D elements */
+}
+
+.activity-title {
+    color: var(--theme-unit, var(--color-base-6));
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.instruction {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* --------------------
+   3D CAROUSEL (Coverflow)
+   -------------------- */
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 450px;
+    padding: 2rem 0;
+    perspective: 1000px;
+    /* Required for 3D effect */
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 1.5rem;
+    color: var(--theme-unit, #f15a22);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    background: var(--surface);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.carousel-track {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    height: 380px;
+    transform-style: preserve-3d;
+}
+
+/* Base Card Styles */
+.gallery-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease;
+    will-change: transform, opacity;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-image-wrapper {
+    height: 60%;
+    background: #cbd5e1;
+    /* Placeholder grey */
+    overflow: hidden;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .card-image-wrapper img {
+    transform: scale(1.05);
+    /* Slight zoom on hover */
+}
+
+.card-content {
+    padding: 1.5rem;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-content h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-main);
+    font-size: 1.25rem;
+}
+
+.card-content p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* 3D Transform States */
+.gallery-card.active {
+    transform: translateX(0) scale(1) translateZ(0);
+    opacity: 1;
+    z-index: 3;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-card.prev {
+    transform: translateX(-40%) scale(0.8) translateZ(-100px) rotateY(15deg);
+    opacity: 0.6;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.gallery-card.next {
+    transform: translateX(40%) scale(0.8) translateZ(-100px) rotateY(-15deg);
+    opacity: 0.6;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.gallery-card.hidden {
+    transform: translateX(0) scale(0.6) translateZ(-200px);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* --------------------
+   QUESTIONS BANNER
+   -------------------- */
+.questions-banner {
+    background: var(--theme-unit, var(--color-base-6));
+    color: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+.questions-banner h4 {
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+.questions-banner ul {
+    margin: 0;
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.questions-banner li {
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* --------------------
+   AR SCANNER MODAL
+   -------------------- */
+.ar-launch-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+}
+
+.open-ar-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.open-ar-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+}
+
+.ar-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.ar-modal-content {
+    width: 100%;
+    height: 100%;
+    max-width: 800px;
+    max-height: 90vh;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.ar-modal-header {
+    background: #1f2937;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.ar-modal-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.close-ar-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.close-ar-btn:hover {
+    background: #dc2626;
+}
+
+.ar-iframe {
+    flex: 1;
+    width: 100%;
+    border: none;
+    background: #000;
+}

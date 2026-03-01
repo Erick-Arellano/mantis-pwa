@@ -1,0 +1,32 @@
+Color Palette
+Colores Base
+#882B41
+#2E7784
+#00A9B5
+#C95B23
+#A7BE38
+#E4A139
+Colores Secundarios
+Grises
+#944B88
+#2C537D
+#66BB99
+#99643E
+#405A54
+#517673
+#89A59B
+#DAE2DE
+#4D9B40
+#F5821F
+#F2706C (comodín)
+Tipografía (Deuterium Variable)
+Deuterium Light (300)
+Deuterium Medium (480)
+Deuterium Bold (560)
+Deuterium Black (700)
+Elementos Gráﬁcos Base
+Etiquetas
+Campo p/escribir
+número icono Deuterium 560
+Headers
+1

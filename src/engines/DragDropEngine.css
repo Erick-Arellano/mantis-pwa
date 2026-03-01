@@ -1,0 +1,190 @@
+.drag-drop-engine {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    background-color: var(--surface);
+    min-height: calc(100vh - 120px);
+}
+
+.dnd-workspace {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1;
+    margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+    .dnd-workspace {
+        flex-direction: row;
+    }
+}
+
+.image-area-container {
+    flex: 2;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.image-wrapper.missing-img {
+    width: 100%;
+    min-height: 400px;
+    background: #e2e8f0;
+}
+
+.family-tree-bg {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    max-height: 60vh;
+}
+
+.word-bank-container {
+    flex: 1;
+    background: var(--background);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.bank-title {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+.word-bank {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    min-height: 100px;
+    align-content: flex-start;
+}
+
+.draggable-label {
+    background-color: var(--theme-unit);
+    color: white;
+    padding: 0.35rem 1rem;
+    border-radius: var(--radius-full);
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.draggable-label:active {
+    cursor: grabbing;
+}
+
+.draggable-label.dragging {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Validation styles for Labels */
+.draggable-label.correct {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.draggable-label.incorrect {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+.droppable-target {
+    position: absolute;
+    min-width: 80px;
+    min-height: 32px;
+    padding: 2px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1.5px dashed var(--theme-unit);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+.droppable-target.is-over {
+    background: rgba(255, 255, 255, 1);
+    border: 3px solid var(--theme-unit);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    /* We don't scale here otherwise we mess up the transform center, 
+       we'd have to specify translate(-50%, -50%) scale(1.05) inline unfortunately */
+}
+
+.droppable-target.has-item {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+/* Ensure the label inside the target takes up the full space properly without weird margins */
+.droppable-target.has-item .draggable-label {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.target-placeholder {
+    color: var(--theme-unit);
+    font-size: 0.65rem;
+    font-weight: 480;
+    pointer-events: none;
+    text-transform: uppercase;
+}
+
+.action-footer {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.primary-btn.submit-btn {
+    background: var(--theme-unit);
+    color: white;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    border-radius: var(--radius-md);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.secondary-btn.retry-btn {
+    background: #e2e8f0;
+    color: var(--text-main);
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    border-radius: var(--radius-md);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
