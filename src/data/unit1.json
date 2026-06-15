@@ -1059,7 +1059,7 @@
                 {
                   "id": "f_phone",
                   "label": "Phone Number",
-                  "answer": "5 13 23 18"
+                  "answer": "5-13-23-18"
                 }
               ]
             }
@@ -1127,8 +1127,8 @@
               {
                 "character": "Dan",
                 "text": "I'm 21.",
-                "startTime": 4.6,
-                "endTime": 6.3
+                "startTime": 4.5,
+                "endTime": 6.2
               },
               {
                 "character": "Carly",
