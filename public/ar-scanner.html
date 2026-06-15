@@ -4,7 +4,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta charset="utf-8" />
-  <title>Mantis AR Scanner</title>
+  <title>Radar AR Scanner</title>
   <!-- A-Frame and MindAR for Image Tracking -->
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
@@ -75,6 +75,7 @@
       flex-direction: column;
       justify-content: space-between;
       padding: 20px;
+      align-items: center;
       box-sizing: border-box;
     }
 
@@ -119,8 +120,8 @@
     }
 
     .scan-frame {
-      border: 2px dashed rgba(255, 255, 255, 0.7);
-      border-radius: 20px;
+      border: 2px dashed rgba(255, 255, 255, 0.85);
+      border-radius: 24px;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -130,14 +131,38 @@
       box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);
     }
 
-    .instruction {
+    .instruction-top {
       color: white;
       text-align: center;
-      margin-top: auto;
       font-family: sans-serif;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 10px;
-      border-radius: 10px;
+      background: rgba(15, 23, 42, 0.85);
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: bold;
+      max-width: 90%;
+      box-sizing: border-box;
+      line-height: 1.4;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 10px;
+    }
+
+    .instruction-bottom {
+      color: rgba(255, 255, 255, 0.7);
+      text-align: center;
+      font-family: sans-serif;
+      background: rgba(30, 30, 30, 0.75);
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      width: 90%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .label-plane {
@@ -156,14 +181,15 @@
 
 <body>
   <div class="loading-screen" id="loading-screen">
-    <h1>Mantis AR</h1>
+    <h1>Radar AR</h1>
     <div class="spinner"></div>
     <p>Starting Camera...</p>
   </div>
 
   <div id="ui-layer">
+    <div class="instruction-top">Point your camera at the book images to discover the activity.</div>
     <div class="scan-frame"></div>
-    <div class="instruction">Point your camera at the Unit 1 photos</div>
+    <div class="instruction-bottom">Unit 1 AR Activities</div>
   </div>
 
   <!-- 

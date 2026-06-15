@@ -8,29 +8,8 @@
     flex-direction: column;
     overflow: hidden;
     background: var(--surface);
-    border-radius: var(--radius-md);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.ar-instruction-banner {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.95);
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-    z-index: 10;
-    text-align: center;
-    width: 90%;
-    max-width: 400px;
-}
-
-.ar-instruction-banner p {
-    margin: 0;
-    font-weight: 600;
-    color: var(--text-main);
+    border-radius: 32px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .ar-startup-screen {
@@ -59,7 +38,7 @@
     width: 100%;
     height: 100%;
     border: none;
-    border-radius: var(--radius-md);
+    border-radius: inherit;
 }
 
 .pulse-glow {

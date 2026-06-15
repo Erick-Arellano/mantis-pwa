@@ -30,11 +30,6 @@ export default function AREngine({ data }) {
 
     return (
         <div className="ar-engine-container">
-            {data && data.instruction && (
-                <div className="ar-instruction-banner">
-                    <p>{data.instruction}</p>
-                </div>
-            )}
 
             {!isStarted ? (
                 <div className="ar-startup-screen">
